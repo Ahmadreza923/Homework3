@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Generator</title>
+</head>
+<body>
+    <h1 style="text-align: center; padding:20px; padding-bottom:40px;">Password Generator</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style="padding:40px; padding-bottom:20px;">Generat a Password</h1>
+                <hr>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input id="demo" style="height: 200px; text-align: center; padding-bottom:150px; font-size: 20px; " class="form-control" type="text" placeholder="Your secure password" >
+                <hr>
+                <br><br><br>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button id="butt" style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Generat Password</button>
+            </div>  
+            <div class="col-md-6">
+                <button style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Copy to clipboard</button>
+            </div>  
+        </div>
+    </div> 
+    <script>
+        // Creating our Pass object.
+        var Pass= {
+            "SpecialChar": " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ", 
+            "NumericChar" : "1234567890",
+            "CharSet" : "abcdefghijklmnopqrstuvwxyz",
+            GeneratePassword: function() {
+                var password="";
+                var Len=(Math.floor(Math.random() * 121+8));
+                for(i=0;i<=Len;i++){
+                    var index=(Math.floor(Math.random() * 3));
+                    var Uppercase=(Math.floor(Math.random() * 2));
+                    if(index===0){
+                        SpecialCharIndex = Math.floor(Math.random() * Pass.SpecialChar.length);
+                        var newChar=Pass.SpecialChar.charAt(SpecialCharIndex);
+                        password+=newChar; 
+                    } else if(index===1){
+                        NumericCharIndex = Math.floor(Math.random() * Pass.NumericChar.length);
+                        var newChar= Pass.NumericChar.charAt(NumericCharIndex);
+                        password+=newChar; 
+                    } else{
+                        CharSetIndex = Math.floor(Math.random() * Pass.CharSet.length);
+                        var newChar= Pass.CharSet.charAt(CharSetIndex);
+                        if (Uppercase===0){     
+                            password+=newChar.toLowerCase(); 
+                        }else{
+                            password+=newChar.toUpperCase(); 
+                        }
+                    }
+                }
+                document.getElementById("demo").placeholder= password;
+                console.log(password);
+            }
+        }; 
+        x = document.getElementById("butt");
+        console.log("done");
+        x.addEventListener("click", Pass.GeneratePassword);
+    </script>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Bootstrap JavaScript CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
