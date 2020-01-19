@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Password Generator</title>
@@ -27,10 +27,10 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <button id="butt" style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Generat Password</button>
+                <button id="butt1" style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Generat Password</button>
             </div>  
             <div class="col-md-6">
-                <button style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Copy to clipboard</button>
+                <button id="butt2" style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Copy to clipboard</button>
             </div>  
         </div>
     </div> 
@@ -65,12 +65,21 @@
                     }
                 }
                 document.getElementById("demo").placeholder= password;
-                console.log(password);
+                // console.log(password);
+            },
+            CopyPassword: function() {
+                var copyPass=document.getElementById("demo");
+                var copyText=copyPass.placeholder;
+                copyPass.placeholder="";
+                alert("Copied the text:        " + copyText);
+                // console.log(copyText);
             }
         }; 
-        x = document.getElementById("butt");
-        console.log("done");
+        x = document.getElementById("butt1");
+        // console.log("done");
         x.addEventListener("click", Pass.GeneratePassword);
+        y = document.getElementById("butt2");
+        y.addEventListener("click", Pass.CopyPassword);
     </script>
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -79,3 +88,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+  
