@@ -33,13 +33,17 @@
                 <button id="butt2" style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Copy to clipboard</button>
             </div>  
         </div>
-    </div> 
+    </div>
+    
+    
     <script>
-        // Creating our Pass object.
+        // Creating our Pass object. It has three lists and two functions
         var Pass= {
             "SpecialChar": " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ", 
             "NumericChar" : "1234567890",
             "CharSet" : "abcdefghijklmnopqrstuvwxyz",
+            
+            // Function to generate password
             GeneratePassword: function() {
                 var password="";
                 var Len=(Math.floor(Math.random() * 121+8));
@@ -67,19 +71,30 @@
                 document.getElementById("demo").placeholder= password;
                 // console.log(password);
             },
+            // End of Function to generate password
+
+            // Function to copy to clipboard
             CopyPassword: function() {
                 var copyPass=document.getElementById("demo");
                 var copyText=copyPass.placeholder;
-                copyPass.placeholder="";
+                document.getElementById("demo").placeholder="";
                 alert("Copied the text:        " + copyText);
                 // console.log(copyText);
             }
+            // End of Function to copy to clipboard
+
         }; 
+        // End of creating Pass object
+
+        // Getting element butt1 and Calling fisrt function of Pass object to generate password 
         x = document.getElementById("butt1");
-        // console.log("done");
         x.addEventListener("click", Pass.GeneratePassword);
+        // console.log("done");
+
+        // Getting element butt2 and Calling second function of Pass object to copy to clipboard
         y = document.getElementById("butt2");
         y.addEventListener("click", Pass.CopyPassword);
+
     </script>
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
