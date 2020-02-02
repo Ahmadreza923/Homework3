@@ -26,10 +26,10 @@
             </div>  
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" style="position: relative;">
                 <button id="butt1" style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Generat Password</button>
             </div>  
-            <div class="col-md-6">
+            <div class="col-md-6" style="position: relative;">
                 <button id="butt2" style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Copy to clipboard</button>
             </div>  
         </div>
@@ -89,23 +89,16 @@
         // Getting element butt1 and Calling fisrt function of Pass object to generate password 
 
         x = document.getElementById("butt1");
-        x.setAttribute("class","btn btn-primary");
-
         x.addEventListener("click", Pass.GeneratePassword);
         // console.log("done");
 
         // Getting element butt2 and Calling second function of Pass object to copy to clipboard
         y = document.getElementById("butt2");
-        y.setAttribute("class","btn btn-primary");
-
         y.addEventListener("click", Pass.CopyPassword);
 
     </script>
     <!-- jQuery CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <!-- Bootstrap JavaScript CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   
 </body>
 </html>
   
