@@ -87,12 +87,17 @@
         // End of creating Pass object
 
         // Getting element butt1 and Calling fisrt function of Pass object to generate password 
+
         x = document.getElementById("butt1");
+        x.setAttribute("class","btn btn-primary");
+
         x.addEventListener("click", Pass.GeneratePassword);
         // console.log("done");
 
         // Getting element butt2 and Calling second function of Pass object to copy to clipboard
         y = document.getElementById("butt2");
+        y.setAttribute("class","btn btn-primary");
+
         y.addEventListener("click", Pass.CopyPassword);
 
     </script>
