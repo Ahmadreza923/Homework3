@@ -6,30 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
     <title>Password Generator</title>
 </head>
-<body>
+<body style="    background:rgb(218, 218, 226);">
     <h1 style="text-align: center; padding:20px; padding-bottom:40px;">Password Generator</h1>
-    <div class="container">
+    <div class="container" style="    background:white;">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="height: 200px;">
                 <h1 style="padding:40px; padding-bottom:20px;">Generat a Password</h1>
                 <hr>
             </div>  
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="height: 200px;">
                 <input id="demo" style="height: 200px; text-align: center; padding-bottom:150px; font-size: 20px; " class="form-control" type="text" placeholder="Your secure password" >
                 <hr>
                 <br><br><br>
             </div>  
         </div>
-        <div class="row">
-            <div class="col-md-6" style="position: relative;">
+        <div class="row"style="height:100px;">
+            <div class="col-md-6">
                 <button id="butt1" style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Generat Password</button>
             </div>  
-            <div class="col-md-6" style="position: relative;">
+            <div class="col-md-6">
                 <button id="butt2" style="position: absolute; left:200px; bottom: 25px;" type="button" class="btn btn-danger">Copy to clipboard</button>
             </div>  
         </div>
@@ -86,8 +85,7 @@
         }; 
         // End of creating Pass object
 
-        // Getting element butt1 and Calling fisrt function of Pass object to generate password 
-
+        // Getting element butt1 and Calling fisrt function of Pass object to generate password zz
         x = document.getElementById("butt1");
         x.addEventListener("click", Pass.GeneratePassword);
         // console.log("done");
@@ -98,7 +96,7 @@
 
     </script>
     <!-- jQuery CDN -->
-   
+    
 </body>
 </html>
   
